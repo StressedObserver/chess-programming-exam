@@ -71,7 +71,7 @@ public class ChessPiece {
                 HoppingMovesCalculator kingSeer = new HoppingMovesCalculator();
                 return kingSeer.possibleMoves(board, myPosition, kingOffsets);
             case KNIGHT:
-                int[][] knightOffsets = {{2,1}, {-2, 1}, {1, 2}, {1,-2}, {-1, -2}, {-1, 2}, {1, -2}, {1, 2}}; //This is where it gets a bit weird.
+                int[][] knightOffsets = {{1, -2}, {2, -1}, {2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}}; //This is where it gets a bit weird.
                 HoppingMovesCalculator knightSeer = new HoppingMovesCalculator();
                 return  knightSeer.possibleMoves(board, myPosition, knightOffsets);
 
