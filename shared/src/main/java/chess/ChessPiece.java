@@ -55,11 +55,17 @@ public class ChessPiece {
         ChessPiece.PieceType typeOfPiece = board.getPiece(myPosition).getPieceType();
         switch (typeOfPiece){ //I'll finish this later.
             case ROOK:
-
+                int[][] rookOffsets = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}}; // ^ v < >
+                SlidingMovesCalculator rookSeer = new SlidingMovesCalculator();
+                return rookSeer.possibleMoves(board, myPosition, rookOffsets);
             case QUEEN:
-
+                int[][] queenOffsets = {{1,0}, {-1, 0}, {0, 1}, {0,-1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}}; //Combine rook and bishop offsets.
+                SlidingMovesCalculator queenSeer = new SlidingMovesCalculator();
+                return queenSeer.possibleMoves(board, myPosition, queenOffsets);
             case BISHOP:
-
+                int[][] bishopOffsets = {{-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+                SlidingMovesCalculator bishopSeer = new SlidingMovesCalculator();
+                return bishopSeer.possibleMoves(board, myPosition, bishopOffsets);
             case KING:
 
             case KNIGHT:
