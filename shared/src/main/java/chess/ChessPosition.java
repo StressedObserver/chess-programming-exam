@@ -29,4 +29,9 @@ public class ChessPosition {
     public int getColumn() {
         return myCol;
     }
+
+    //This function will come in handy when implementing the move helpers.
+    public boolean isInBounds(){
+        return ((myRow > 0 && myRow <= 8) && (myCol > 0 && myCol <= 8));
+    }
 }
