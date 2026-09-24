@@ -1,5 +1,7 @@
 package chess;
 
+import java.util.Objects;
+
 /**
  * Represents a single square position on a chess board
  * <p>
@@ -33,5 +35,27 @@ public class ChessPosition {
     //This function will come in handy when implementing the move helpers.
     public boolean isInBounds(){
         return ((myRow > 0 && myRow <= 8) && (myCol > 0 && myCol <= 8));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ChessPosition that = (ChessPosition) o;
+        return myRow == that.myRow && myCol == that.myCol;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(myRow, myCol);
+    }
+
+    @Override
+    public String toString() {
+        return "ChessPosition{" +
+                "myRow=" + myRow +
+                ", myCol=" + myCol +
+                '}';
     }
 }
