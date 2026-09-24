@@ -1,5 +1,6 @@
 package chess;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class SlidingMovesCalculator implements PieceMovesCalculator{
     @Override
     public Collection<ChessMove> possibleMoves(ChessBoard board, ChessPosition myPosition, int[][] offsets) {
         ChessPiece myPiece = board.getPiece(myPosition);
-        Collection<ChessMove> legalMoves; //Change this later when function is fully implemented.
+        Collection<ChessMove> legalMoves = new ArrayList<>(); //Change this later when function is fully implemented.
         for(int[] offset : offsets){
             int rowOffset = offset[0];
             int colOffset = offset[1];
