@@ -76,7 +76,8 @@ public class ChessPiece {
                 return  knightSeer.possibleMoves(board, myPosition, knightOffsets);
             case PAWN:
                 int[][] pawnOffsets = {{1, -1}, {1, 0}, {1, 1}};
-
+                PawnMovesCalculator pawnSeer = new PawnMovesCalculator();
+                return pawnSeer.possibleMoves(board, myPosition, pawnOffsets);
             case null, default:
                 return List.of();
         }
